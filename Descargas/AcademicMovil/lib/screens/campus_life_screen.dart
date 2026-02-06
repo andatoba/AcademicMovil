@@ -36,7 +36,7 @@ class CampusLifeScreen extends StatelessWidget {
                     )
                   : Row(
                       children: [
-                        const Expanded(child: _LifeIntroPanel()),
+                        Expanded(child: _LifeIntroPanel()),
                         const SizedBox(width: 20),
                         Expanded(child: _LifeImage()),
                       ],

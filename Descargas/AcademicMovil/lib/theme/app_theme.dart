@@ -24,14 +24,13 @@ class AppTheme {
 
     return base.copyWith(
       colorScheme: colorScheme,
-      fontFamily: 'Segoe UI',
       scaffoldBackgroundColor: AppColors.surface,
       appBarTheme: const AppBarTheme(
         backgroundColor: Colors.transparent,
         elevation: 0,
         scrolledUnderElevation: 0,
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: AppColors.card,
         elevation: 0,
         margin: EdgeInsets.zero,

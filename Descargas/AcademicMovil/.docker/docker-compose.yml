@@ -4,5 +4,16 @@ services:
     build:
       context: ..
       dockerfile: .docker/Dockerfile
+    container_name: academic-portal
+    restart: unless-stopped
     ports:
-      - "8080:80"
+      - "0.0.0.0:8080:80"
+    environment:
+      - VIRTUAL_HOST=5.161.198.89
+      - NGINX_HOST=5.161.198.89
+    networks:
+      - academic-network
+
+networks:
+  academic-network:
+    driver: bridge

@@ -1,0 +1,31 @@
+# Archivos y directorios que Docker debe ignorar
+.git
+.gitignore
+README.md
+.vscode
+.idea
+*.md
+
+# Flutter
+build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+pubspec.lock
+
+# Testing
+test/
+coverage/
+
+# Docker
+.docker/docker-compose.yml
+#.env 
+Dockerfile
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
