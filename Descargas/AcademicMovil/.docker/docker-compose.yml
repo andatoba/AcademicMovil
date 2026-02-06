@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  academic-portal:
+    build:
+      context: ..
+      dockerfile: .docker/Dockerfile
+    ports:
+      - "8080:80"
