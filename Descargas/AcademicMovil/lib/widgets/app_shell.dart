@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../data/app_data.dart';
 import '../screens/about_screen.dart';
 import '../screens/admissions_screen.dart';
+import '../screens/admissions_login_screen.dart';
 import '../screens/campus_life_screen.dart';
 import '../screens/contact_screen.dart';
 import '../screens/home_screen.dart';
@@ -45,6 +46,13 @@ class _AppShellState extends State<AppShell> {
     setState(() => _selectedIndex = index);
   }
 
+  void _openAdmissionsLogin(BuildContext context) {
+    _onSelect(AppNavIndex.admissions);
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => const AdmissionsLoginScreen()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final isCompact = MediaQuery.of(context).size.width < 1024;
@@ -60,7 +68,7 @@ class _AppShellState extends State<AppShell> {
               onSelect: _onSelect,
               isCompact: isCompact,
               onMenuTap: isCompact ? () => Scaffold.of(context).openDrawer() : null,
-              onPrimaryAction: () => _onSelect(AppNavIndex.admissions),
+              onPrimaryAction: () => _openAdmissionsLogin(context),
             ),
           ),
           Expanded(
@@ -145,7 +153,7 @@ class _AppShellState extends State<AppShell> {
             child: ElevatedButton.icon(
               onPressed: () {
                 Navigator.pop(context);
-                _onSelect(AppNavIndex.admissions);
+                _openAdmissionsLogin(context);
               },
               icon: const Icon(Icons.how_to_reg_outlined),
               label: const Text('Iniciar postulacion'),

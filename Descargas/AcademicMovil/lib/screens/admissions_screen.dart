@@ -7,9 +7,16 @@ import '../widgets/info_card.dart';
 import '../widgets/page_scaffold.dart';
 import '../widgets/section_container.dart';
 import '../widgets/section_header.dart';
+import 'admissions_login_screen.dart';
 
 class AdmissionsScreen extends StatelessWidget {
   const AdmissionsScreen({super.key});
+
+  void _openLogin(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => const AdmissionsLoginScreen()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +55,7 @@ class AdmissionsScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: 16),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () => _openLogin(context),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: AppColors.navy,
                               foregroundColor: Colors.white,
@@ -76,7 +83,7 @@ class AdmissionsScreen extends StatelessWidget {
                             ),
                           ),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () => _openLogin(context),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: AppColors.navy,
                               foregroundColor: Colors.white,
